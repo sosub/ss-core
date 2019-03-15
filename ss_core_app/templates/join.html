@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Tuyển dụng - SoSub.Org | Nơi học mọi thứ qua phụ đề song ngữ</title>
+    <style>
+        body {
+            padding: 0 10px;
+            margin: 0;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: 0;
+        }
+    </style>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <iframe></iframe>
+    <script type="text/javascript">
+        $(function() {
+            $.get("https://docs.google.com/document/d/1olTXZg3XlT2OeB5KOnSStPK28dB8ikdtX2sEAppQ2Kc/pub?embedded=true", function(html) {
+                var contents = $("iframe").contents();
+
+                contents.find("html").html(html);
+
+                setTimeout(function() {
+                    contents.find('a[href^="http://"]').on('click', function() {
+                       window.location.href = $(this).attr('href');
+                    });
+                    contents.find('a[href^="https://"]').on('click', function() {
+                       window.location.href = $(this).attr('href');
+                    });
+                }, 1000); // Actually not sure if timeout is required here...
+            });
+        });
+    </script>
+</body>
+</html>

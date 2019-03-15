@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <title>{% block title %}{% endblock %}SOSUB.ORG . Nơi học mọi thứ qua phụ đề song ngữ</title>
+    <style>
+        body {
+            padding: 0 10px;
+            margin: 0;
+            text-align: center;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 8000;
+            border-bottom: 1px solid #E9F0F3;
+            background-color: white;
+        }
+        .header__content {
+            max-width: 1024px;
+            margin: auto;
+            padding: 0 10px;
+        }
+        .header__content__logo {
+            float: left;
+            margin-top: 23px;
+            height: 35px;
+        }
+        .header__content__menu {
+            list-style: none;
+            float: right;
+            margin-top: 31px;
+            padding: 0;
+        }
+        .header__content__menu li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+        .header__content__menu li:first-child {
+            margin-left: 0;
+        }
+        .header__content__menu li a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #006b49;
+            font-family: 'Tahoma', sans-serif;
+        }
+        .header__content__menu li:hover {
+            color: #384047;
+        }
+        iframe {
+            margin-top: 100px;
+            width: 100%;
+            max-width: 900px;
+            height: 100vh;
+            border: 0;
+        }
+        @media only screen and (max-width: 500px) {
+            .header__content__menu {
+                margin-top: 5px;
+            }
+            .header__content__menu li {
+                display: block;
+                text-align: right;
+            }
+        }
+    </style>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class='header'>
+        <section class='header__content'>
+            <a href='/'><img class='header__content__logo' src='/static/img/logo.png'/></a>
+            <ul class='header__content__menu'>
+                <!-- <li><a href='/tien-trinh-gay-quy/'>Gây quỹ</a></li> -->
+                <li><a href='/cau-hoi-thuong-gap/'>FAQ</a></li>
+                <!-- <li><a href='/tang-sach-thang-7/'>Tặng sách</a></li> -->
+                <!-- <li><a href='/bao-cao-tai-chinh/'>Báo cáo</a></li> -->
+            </ul>
+        </section>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

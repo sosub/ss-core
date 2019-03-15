@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Câu hỏi thường gặp | {% endblock %}
+{% block content %}
+    <iframe></iframe>
+    <script type="text/javascript">
+        $(function() {
+            $.get("https://docs.google.com/document/d/1k_3U6NccrmtiX111Yc3xoaDFO2Jf2Pu20ulPXLm-3dU/pub?embedded=true", function(html) {
+                var contents = $("iframe").contents();
+
+                contents.find("html").html(html);
+
+                setTimeout(function() {
+{#                    contents.find('a[href^="http://"]').attr("target", "_blank");#}
+{#                    contents.find('a[href^="https://"]').attr("target", "_blank");#}
+                    contents.find('a[href^="http://"]').on('click', function() {
+                       window.location.href = $(this).attr('href');
+                    });
+                    contents.find('a[href^="https://"]').on('click', function() {
+                       window.location.href = $(this).attr('href');
+                    });
+                }, 1000); // Actually not sure if timeout is required here...
+            });
+        });
+    </script>
+{% endblock %}

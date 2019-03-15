@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Danh sách Video - SoSub.Org | Nơi học mọi thứ qua phụ đề song ngữ</title>
+    <style>
+        body {
+            padding: 0 10px;
+            margin: 0;
+        }
+        a {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/"><h2><< Trở lại trang chủ</h2></a>
+    <ul>
+    {% for video in videos %}
+        <li>
+            <a href="/{{ video.slug }}/" target="_blank">{{ forloop.revcounter }}. {{ video.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
