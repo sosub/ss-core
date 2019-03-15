@@ -136,19 +136,19 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ALLOW_CREDENTIALS = True
 
-
-# Add debug toolbar
-INSTALLED_APPS.append(
-    'debug_toolbar'
-)
-MIDDLEWARE.append(
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
-)
-# debug_toolbar config
-INTERNAL_IPS = ['127.0.0.1', ]
-DEBUG_TOOLBAR_CONFIG = {
-    "SHOW_TOOLBAR_CALLBACK" : lambda x: True,
-}
+if DEBUG:
+    # Add debug toolbar
+    INSTALLED_APPS.append(
+        'debug_toolbar'
+    )
+    MIDDLEWARE.append(
+        'debug_toolbar.middleware.DebugToolbarMiddleware'
+    )
+    # debug_toolbar config
+    INTERNAL_IPS = ['127.0.0.1', ]
+    DEBUG_TOOLBAR_CONFIG = {
+        "SHOW_TOOLBAR_CALLBACK" : lambda x: True,
+    }
 
 # REST_SESSION_LOGIN = True
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
